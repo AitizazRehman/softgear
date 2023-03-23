@@ -1,0 +1,30 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+use Prettus\Repository\Contracts\Transformable;
+use Prettus\Repository\Traits\TransformableTrait;
+
+/**
+ * Class Upload.
+ *
+ * @package namespace App\Models;
+ */
+class Upload extends Model implements Transformable
+{
+    use TransformableTrait;
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $guarded = ['id'];
+    
+    public function uploadable()
+    {
+       return $this->morphTo();
+     }
+
+}
